@@ -5,6 +5,10 @@
    tasks:
      - name: show manager and worker info
        shell: docker node ls
+       register: a
+     - name: display node details
+       debug:
+          msg: "{{ a.stdout }}"
      - name: remote existing service
        shell: docker service remote myweb
      - name: deploy container on cluster
