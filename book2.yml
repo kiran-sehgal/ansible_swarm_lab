@@ -10,7 +10,7 @@
        debug:
           msg: "{{ a.stdout }}"
      - name: remote existing service
-       shell: docker service remote myweb
+       shell: docker service remove myweb
      - name: deploy container on cluster
        shell: docker service create -d -p 80:80 --replicas=7  --name myweb  kiransehgal01995/education2026
      - name: show running container info
