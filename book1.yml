@@ -1,6 +1,7 @@
 ---
  - name: manage docker swarm
    hosts: manager
+   ignore_errors: yes
    tasks:
      - name: install docker
        yum:
@@ -28,6 +29,7 @@
        shell: grep docker /tmp/docker_worker_token.txt > /home/itadmin/punepro/token.sh
  - name: add workers into swarm
    hosts: worker
+   ignore_errors: yes
    tasks:
      - name: install docker
        yum:
