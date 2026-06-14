@@ -17,4 +17,5 @@
        shell: docker service ps myweb
        register: b
      - name: display service info
+       debug:
           msg: "{{ b.stdout }}"
